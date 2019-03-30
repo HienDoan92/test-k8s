@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: frontend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: guestbook_v2-pod
+  template:
+    metadata:
+      labels:
+        app: guestbook_v2-pod
+    spec:
+      containers:
+      - name: guestbook_v2
+        image: kubernetes/guestbook:v2
+        ports:
+        - containerPort: 80
