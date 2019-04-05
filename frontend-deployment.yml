@@ -15,7 +15,7 @@ spec:
         app: guestbook_v2-pod
     spec:
       containers:
-      - name: guestbook_v2
+      - name: guestbook-v2
         image: kubernetes/guestbook:v2
         ports:
         - containerPort: 80
